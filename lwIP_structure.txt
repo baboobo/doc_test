@@ -1,0 +1,48 @@
+api/      - The code for the high-level wrapper API. Not needed if
+            you use the lowel-level call-back/raw API.
+
+core/     - The core of the TPC/IP stack; protocol implementations,
+            memory and buffer management, and the low-level raw API.
+
+include/  - lwIP include files.
+
+netif/    - Generic network interface device drivers are kept here,
+            as well as the ARP module.
+		etharp.c
+				  Implements the ARP (Address Resolution Protocol) over
+				  Ethernet. The code in this file should be used together with
+				  Ethernet device drivers. Note that this module has been
+				  largely made Ethernet independent so you should be able to
+				  adapt this for other link layers (such as Firewire).
+
+		ethernetif.c
+				  An example of how an Ethernet device driver could look. This
+				  file can be used as a "skeleton" for developing new Ethernet
+				  network device drivers. It uses the etharp.c ARP code.
+				  ->in CubeMX same file was used. NON-Edited
+
+		loopif.c
+				  A "loopback" network interface driver. It requires configuration
+				  through the define LWIP_LOOPIF_MULTITHREADING (see opt.h).
+
+		slipif.c
+				  A generic implementation of the SLIP (Serial Line IP)
+				  protocol. It requires a sio (serial I/O) module to work.
+
+		ppp/      Point-to-Point Protocol stack
+				  The PPP stack has been ported from ucip (http://ucip.sourceforge.net).
+				  It matches quite well to pppd 2.3.1 (http://ppp.samba.org), although
+				  compared to that, it has some modifications for embedded systems and
+				  the source code has been reordered a bit.
+				  
+				  
+Each subdirectory (may) also include:
+
+perf.c     - Optional file that should be implemented when running
+             performance tests of lwIP.
+
+sys.c      - Implementation of the operating system emulation layer.
+
+include/   - Architectural specific header files.
+
+netif/     - Architectural specific network interfaces.

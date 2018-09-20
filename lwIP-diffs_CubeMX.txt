@@ -1,0 +1,15 @@
+diffs to CUBEMX:
++	add in CUBEMX
+-	missing in CUBEMX
+#	edited in CUBEMX
+
+dir				+		-		#
+---------------------------
+include/lwip:	cc.h	-		-
+core/ipv4:		
+								
+								
+		
+
+-------------------------------
+cc.h wurde von uns eingebunden, hat aber keinen Inhalt

@@ -1,0 +1,41 @@
+target_sources(${PROJECT_NAME} PUBLIC
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/apps/httpd/httpd.c"
+		"${CMAKE_CURRENT_SOURCE_DIR}/src/apps/lwiperf/lwiperf.c"
+		"${CMAKE_CURRENT_SOURCE_DIR}/src/apps/mdns/mdns.c"
+		"${CMAKE_CURRENT_SOURCE_DIR}/src/apps/mqtt/mqtt.c"		
+# some test
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/def.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/dns.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/inet_chksum.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/init.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/ip.c"
+		"${CMAKE_CURRENT_SOURCE_DIR}/src/core/ipv4/autoip.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/ipv4/dhcp.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/ipv4/etharp.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/ipv4/icmp.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/ipv4/igmp.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/ipv4/ip4.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/ipv4/ip4_addr.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/ipv4/ip4_frag.c"
+		
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/mem.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/memp.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/netif.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/pbuf.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/raw.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/stats.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/sys.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/tcp.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/tcp_in.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/tcp_out.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/timeouts.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/core/udp.c"
+		
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/netif/ethernet.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/netif/ethernetif.c"
+
+)
+
+target_include_directories (${PROJECT_NAME} PRIVATE
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/include"
+)
